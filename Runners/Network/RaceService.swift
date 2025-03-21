@@ -8,7 +8,26 @@
 
 import Foundation
 
-struct LowercasedKey: CodingKey {
+struct RaceService {
+    
+    private static let decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .custom { LowercasedKey(stringValue: String($0.last!.stringValue.lowercased()))! }
+        return decoder
+    }()
+    
+    static func race() async throws -> Race {
+        let url = URL(string: "http://849fairmount.com/mobile/runners.json")!
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        
+        return try decoder.decode(Race.self, from: data)
+    }
+}
+
+// MARK: - Key Decoding Strategy
+
+fileprivate struct LowercasedKey: CodingKey {
     var stringValue: String
     var intValue: Int?
     
@@ -20,27 +39,5 @@ struct LowercasedKey: CodingKey {
     init?(intValue: Int) {
         self.stringValue = String(intValue)
         self.intValue = intValue
-    }
-}
-
-class RaceService {
-    class func race(completionHandler: @escaping (Race?) -> Void) {
-        let url = URL(string: "http://849fairmount.com/mobile/runners.json")
-        
-        APIClient.doTask(url: url!) { (data, error) in
-            
-            guard error == nil && data != nil else { completionHandler(nil); return }
-            
-            let decoder = JSONDecoder()
-            
-            decoder.keyDecodingStrategy = .custom({ (keys) -> CodingKey in
-                let key = keys.last!.stringValue.lowercased()
-                return LowercasedKey(stringValue: String(key))!
-            })
-            
-            let race: Race? = try? decoder.decode(Race.self, from: data!)
-            
-            completionHandler(race)
-        }
     }
 }

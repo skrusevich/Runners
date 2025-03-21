@@ -8,35 +8,24 @@
 
 import Foundation
 
-class Runner: Decodable, CustomStringConvertible, Comparable {
+struct Runner: Decodable, Identifiable {
+    
+    var id: String { "\(name)\(time)\(age)" }
+    
     let name: String
     let time: Int
     let age: Int
     
-    var ranking: Int = 0
+    private(set) var rank: Int?
     
-    enum CodingKeys: CodingKey {
-        case name
-        case time
-        case age
+    func ranked(_ rank: Int) -> Runner {
+        Runner(name: name, time: time, age: age, rank: rank)
     }
+}
+
+extension Runner: Comparable {
     
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        name = try container.decode(String.self, forKey: .name)
-        time = try container.decode(Int.self, forKey: .time)
-        age = try container.decode(Int.self, forKey: .age)
-    }
-    
-    static func < (lhs: Runner, rhs: Runner) -> Bool {
-        return lhs.time < rhs.time
-    }
-    
-    static func == (lhs: Runner, rhs: Runner) -> Bool {
-        return lhs.time == rhs.time
-    }
-    
-    var description: String {
-        return "\nRunner: \(name) - \(age) - \(time) - \(ranking)"
+    static func < (lhs: Self, rhs: Self) -> Bool {
+        lhs.time < rhs.time
     }
 }

@@ -6,10 +6,13 @@
 //  Copyright © 2019 Slava Krusevich. All rights reserved.
 //
 
-import Cocoa
+import SwiftUI
 
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
-
+@main
+struct RotateToolExampleApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
 }
-

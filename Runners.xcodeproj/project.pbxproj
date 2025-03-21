@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E5347FCC22395472000CFF6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5347FCB22395472000CFF6A /* AppDelegate.swift */; };
-		E5347FCE22395472000CFF6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5347FCD22395472000CFF6A /* ViewController.swift */; };
+		E5347FCE22395472000CFF6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5347FCD22395472000CFF6A /* ContentView.swift */; };
 		E5347FD022395473000CFF6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5347FCF22395473000CFF6A /* Assets.xcassets */; };
-		E5347FD322395473000CFF6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5347FD122395473000CFF6A /* Main.storyboard */; };
-		E5347FDD223954A5000CFF6A /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5347FDC223954A5000CFF6A /* APIClient.swift */; };
 		E5347FDF223954BB000CFF6A /* RaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5347FDE223954BB000CFF6A /* RaceService.swift */; };
 		E5347FE2223954E1000CFF6A /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5347FE1223954E1000CFF6A /* Runner.swift */; };
 		E5347FE42239552A000CFF6A /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5347FE322395529000CFF6A /* Race.swift */; };
@@ -20,12 +18,10 @@
 /* Begin PBXFileReference section */
 		E5347FC822395472000CFF6A /* Runners.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runners.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5347FCB22395472000CFF6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E5347FCD22395472000CFF6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E5347FCD22395472000CFF6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E5347FCF22395473000CFF6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E5347FD222395473000CFF6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5347FD422395473000CFF6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5347FD522395473000CFF6A /* Runners.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runners.entitlements; sourceTree = "<group>"; };
-		E5347FDC223954A5000CFF6A /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		E5347FDE223954BB000CFF6A /* RaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceService.swift; sourceTree = "<group>"; };
 		E5347FE1223954E1000CFF6A /* Runner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		E5347FE322395529000CFF6A /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
@@ -64,9 +60,8 @@
 				E5347FE0223954CC000CFF6A /* Model */,
 				E5347FDB2239548E000CFF6A /* Network */,
 				E5347FCB22395472000CFF6A /* AppDelegate.swift */,
-				E5347FCD22395472000CFF6A /* ViewController.swift */,
+				E5347FCD22395472000CFF6A /* ContentView.swift */,
 				E5347FCF22395473000CFF6A /* Assets.xcassets */,
-				E5347FD122395473000CFF6A /* Main.storyboard */,
 				E5347FD422395473000CFF6A /* Info.plist */,
 				E5347FD522395473000CFF6A /* Runners.entitlements */,
 			);
@@ -76,7 +71,6 @@
 		E5347FDB2239548E000CFF6A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				E5347FDC223954A5000CFF6A /* APIClient.swift */,
 				E5347FDE223954BB000CFF6A /* RaceService.swift */,
 			);
 			path = Network;
@@ -140,6 +134,8 @@
 				Base,
 			);
 			mainGroup = E5347FBF22395472000CFF6A;
+			packageReferences = (
+			);
 			productRefGroup = E5347FC922395472000CFF6A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -155,7 +151,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5347FD022395473000CFF6A /* Assets.xcassets in Resources */,
-				E5347FD322395473000CFF6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,27 +161,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5347FCE22395472000CFF6A /* ViewController.swift in Sources */,
+				E5347FCE22395472000CFF6A /* ContentView.swift in Sources */,
 				E5347FDF223954BB000CFF6A /* RaceService.swift in Sources */,
 				E5347FE2223954E1000CFF6A /* Runner.swift in Sources */,
 				E5347FCC22395472000CFF6A /* AppDelegate.swift in Sources */,
 				E5347FE42239552A000CFF6A /* Race.swift in Sources */,
-				E5347FDD223954A5000CFF6A /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		E5347FD122395473000CFF6A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E5347FD222395473000CFF6A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E5347FD622395473000CFF6A /* Debug */ = {
@@ -316,6 +299,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				PRODUCT_BUNDLE_IDENTIFIER = Home.Runners;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -334,6 +318,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				PRODUCT_BUNDLE_IDENTIFIER = Home.Runners;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
